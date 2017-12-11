@@ -1,0 +1,112 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:5183097138321086713",
+      "lastPropertyId": "4:6205414652570068328",
+      "name": "Box",
+      "properties": [
+        {
+          "id": "1:1336728101137392496",
+          "name": "small"
+        },
+        {
+          "id": "2:7165796935553448529",
+          "name": "template"
+        },
+        {
+          "id": "3:3621408638230293608",
+          "name": "large"
+        },
+        {
+          "id": "4:6205414652570068328",
+          "name": "medium"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "2:242865723432833807",
+      "lastPropertyId": "5:4178859677299909626",
+      "name": "Logo",
+      "properties": [
+        {
+          "id": "1:6871931695669207451",
+          "name": "small"
+        },
+        {
+          "id": "2:4628568316948260629",
+          "name": "template"
+        },
+        {
+          "id": "3:4675123537299594002",
+          "name": "large"
+        },
+        {
+          "id": "4:1137334307786383574",
+          "name": "medium"
+        },
+        {
+          "id": "5:4178859677299909626",
+          "name": "id"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "3:5108848696361077807",
+      "lastPropertyId": "8:1660870498934075695",
+      "name": "Game",
+      "properties": [
+        {
+          "id": "1:6705436281669668635",
+          "name": "id"
+        },
+        {
+          "id": "2:8499547291409872821",
+          "name": "giantBombId"
+        },
+        {
+          "id": "3:8969523054298432457",
+          "name": "localizedName"
+        },
+        {
+          "id": "4:1664411516325270003",
+          "name": "popularity"
+        },
+        {
+          "id": "5:5500539790839571432",
+          "name": "name"
+        },
+        {
+          "id": "6:2172129757503463821",
+          "name": "locale"
+        },
+        {
+          "id": "7:7213157635832692224",
+          "indexId": "1:4328835855759305997",
+          "name": "logoId"
+        },
+        {
+          "id": "8:1660870498934075695",
+          "indexId": "2:9107836771894627025",
+          "name": "boxId"
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "3:5108848696361077807",
+  "lastIndexId": "2:9107836771894627025",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 4,
+  "modelVersionParserMinimum": 4,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [],
+  "retiredRelationUids": [],
+  "version": 1
+}
