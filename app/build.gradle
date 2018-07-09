@@ -31,7 +31,10 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
     implementation "io.objectbox:objectbox-android:$objectboxVersion"
     implementation "io.objectbox:objectbox-kotlin:$objectboxVersion"
+    implementation "com.google.dagger:dagger:$daggerVersion"
+    implementation "com.google.dagger:dagger-android-support:$daggerVersion"
 
+    kapt "com.google.dagger:dagger-compiler:$daggerVersion"
     kapt "io.objectbox:objectbox-processor:$objectboxVersion"
 
     testImplementation 'junit:junit:4.12'

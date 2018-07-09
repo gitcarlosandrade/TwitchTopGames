@@ -2,32 +2,28 @@ package marcicand.com.br.topgames.presentation.activity
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import dagger.android.AndroidInjection
 import marcicand.com.br.topgames.R
-import marcicand.com.br.topgames.domain.usecase.InitialDataUseCase
-import marcicand.com.br.topgames.infrastructure.ApiImpl
-import marcicand.com.br.topgames.infrastructure.local.GamesLocalDataSetImpl
-import marcicand.com.br.topgames.infrastructure.remote.GamesRemoteDatasetImpl
-import marcicand.com.br.topgames.infrastructure.repository.GamesRepositoryImpl
 import marcicand.com.br.topgames.presentation.contract.MainContract
-import marcicand.com.br.topgames.presentation.contract.MainPresenterImpl
 import marcicand.com.br.topgames.presentation.model.GamesViewModel
+import javax.inject.Inject
 
 class MainActivity : AppCompatActivity(), MainContract.View {
 
-    lateinit var presenter : MainContract.Presenter
+    @Inject lateinit var presenter : MainContract.Presenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val api = ApiImpl()
-        val localDataSet = GamesLocalDataSetImpl()
-        val remoteDataSet = GamesRemoteDatasetImpl(api = api)
-        val repository = GamesRepositoryImpl(localDataSet = localDataSet, remoteDataSet = remoteDataSet)
+        presenter.subscribe()
 
-        presenter = MainPresenterImpl(this, InitialDataUseCase(repository))
-        presenter.getInitialData()
+    }
 
+    override fun showMessage(s: String) {
+        Toast.makeText(this, s, Toast.LENGTH_SHORT).show()
     }
 
     override fun showErrorInitialData(cause: Throwable?) {

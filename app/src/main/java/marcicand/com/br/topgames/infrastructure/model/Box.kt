@@ -1,7 +1,7 @@
 package marcicand.com.br.topgames.infrastructure.model
 
 data class Box(
-        val small: String = "",
-        val template: String = "",
-        val large: String = "",
-        val medium: String = "")
+        var small: String = "",
+        var template: String = "",
+        var large: String = "",
+        var medium: String = "")

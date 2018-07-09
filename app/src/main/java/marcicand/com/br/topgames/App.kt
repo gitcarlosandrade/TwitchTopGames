@@ -1,15 +1,13 @@
 package marcicand.com.br.topgames
 
-import android.app.Application
-import marcicand.com.br.topgames.infrastructure.local.entity.MyObjectBox
+import dagger.android.AndroidInjector
+import dagger.android.DaggerApplication
+import marcicand.com.br.topgames.dagger.AppComponent
 
 
-class App : Application() {
+class App : DaggerApplication() {
 
+    override fun applicationInjector(): AndroidInjector<out DaggerApplication>
+            = DaggerAppComponent.builder().create(this)
 
-    override fun onCreate() {
-        super.onCreate()
-
-        val boxStore = MyObjectBox.builder().androidContext(this).build()
-    }
 }
